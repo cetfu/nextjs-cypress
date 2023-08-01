@@ -1,5 +1,6 @@
 import React from 'react'
 import Counter from './index'
+import "@/app/globals.css"
 
 describe('counter tests', () => {
 
@@ -35,7 +36,8 @@ describe('counter tests', () => {
       <Counter initialValue={1} />
     )
     cy.get("#decrement").click()
-    cy.get("[data-test-id='counter']").should("be.disabled")
+    cy.get("[data-test-id='counter']").should("have.text", 0)
+    cy.get("#decrement").should("be.disabled")
   })
 
 })
