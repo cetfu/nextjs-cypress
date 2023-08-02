@@ -1,0 +1,14 @@
+.button {
+    min-width: 100px;
+    height: 75px;
+    transition: .5s all;
+    border-radius: 10px;
+}
+
+.primary {
+    background-color: #669bbc;
+}
+
+.warning {
+    background-color: #c1121f;
+}
