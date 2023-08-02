@@ -17,8 +17,8 @@ const Button = ({variant = "primary", children = "", ...props}) =>{
 
 
     return (
-        <button className={`${styles.button} ${styles[variantClassName()]}`} {...props}>
-            {children}
+        <button data-cy={"button"} className={`${styles.button} ${styles[variantClassName()]}`} {...props}>
+            <p data-cy={"button-text"} style={{color: "#ffffff"}}>{children}</p>
         </button>
     )
 }

@@ -5,7 +5,10 @@ import "@/app/globals.css"
 describe('counter tests', () => {
 
   beforeEach(() =>{
+    cy.viewport("ipad-2")
     cy.mount(<Counter />)
+    cy.get("#increment").as("inc")
+    cy.get("#decrement").as("desc")
   })
 
   it('counter equals to 0 when render', () => {
@@ -13,14 +16,14 @@ describe('counter tests', () => {
   })
 
   it("counter's increment button runs successfully", () =>{
-    cy.get("#increment").click()
+    cy.get("@inc").click()
     cy.get("[data-test-id='counter']").should("have.text", 1)
   })
 
   it("counter's decrement button runs successfully", () =>{
-    cy.get("#increment").click()
+    cy.get("@inc").click()
     cy.get("[data-test-id='counter']").should("have.text", 1)
-    cy.get("#decrement").click()
+    cy.get("@desc").click()
     cy.get("[data-test-id='counter']").should("have.text", 0)
   })
   
